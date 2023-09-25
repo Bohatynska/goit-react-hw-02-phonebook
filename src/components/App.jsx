@@ -28,15 +28,23 @@ export default class App extends Component {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
   };
-  render() {
+  filterContacts = () => {
     const { contacts, filter } = this.state;
+    const filterNormalized = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filterNormalized)
+    );
+  };
+  render() {
+    const { filter } = this.state;
+    const filteredContacts = this.filterContacts();
     return (
       <Container>
         <h1>Phonebook</h1>
         <PhonebookForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
         <Filter defaultValue={filter} onChange={this.changeFilter} />
-        <ContactList contacts={contacts}></ContactList>
+        <ContactList contacts={filteredContacts}></ContactList>
       </Container>
     );
   }

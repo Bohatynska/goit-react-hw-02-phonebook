@@ -1,11 +1,11 @@
-import { ContactWrap, ContactUl, ContactItem } from './ContactList.styled';
-
+import { ContactWrap, ContactUl } from './ContactList.styled';
+import ContactListItem from 'Components/ContactItem/ContactItem';
 const ContactList = ({ contacts }) => {
   return (
     <ContactWrap>
       <ContactUl>
         {contacts.map(({ id, name, number }) => (
-          <ContactItem key={id} name={name} number={number} id={id} />
+          <ContactListItem key={id} name={name} number={number} id={id} />
         ))}
       </ContactUl>
     </ContactWrap>
