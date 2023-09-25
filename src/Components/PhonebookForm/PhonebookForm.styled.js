@@ -35,6 +35,6 @@ export const FormButton = styled.button`
   border: 1px solid;
   &:hover,
   &:focus {
-    background-color: green;
+    background-color: #d8bfd8;
   }
 `;

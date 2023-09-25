@@ -8,4 +8,3 @@ export const ContactWrap = styled.div`
 export const ContactUl = styled.ul`
   margin-top: 30px;
 `;
-export const ContactItem = styled.li``;

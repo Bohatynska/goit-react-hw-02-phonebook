@@ -41,6 +41,11 @@ export default class App extends Component {
       contact.name.toLowerCase().includes(filterNormalized)
     );
   };
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
+  };
   render() {
     const { filter } = this.state;
     const filteredContacts = this.filterContacts();
@@ -50,7 +55,10 @@ export default class App extends Component {
         <PhonebookForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
         <Filter defaultValue={filter} onChange={this.changeFilter} />
-        <ContactList contacts={filteredContacts}></ContactList>
+        <ContactList
+          contacts={filteredContacts}
+          onDeleteContact={this.deleteContact}
+        ></ContactList>
       </Container>
     );
   }
