@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PhonebookForm from './PhonebookForm/PhonebookForm';
 import ContactList from './ContactList/ContactList.jsx';
 import Filter from './Filter/Filter';
-// import Filter from './Filter/Filter.jsx';
+
 export default class App extends Component {
   state = {
     contacts: [
@@ -17,16 +17,16 @@ export default class App extends Component {
   };
 
   addContact = contacts => {
-    console.log(contacts);
+    // console.log(contacts);
     const { name, number } = contacts;
     const contact = { id: nanoid(), name, number };
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
     }));
   };
+
   changeFilter = event => {
-    const { name, value } = event.currentTarget;
-    this.setState({ [name]: value });
+    this.setState({ filter: event.currentTarget.value });
   };
   filterContacts = () => {
     const { contacts, filter } = this.state;

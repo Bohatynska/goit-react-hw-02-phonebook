@@ -1,10 +1,10 @@
 import { FilterWrap, FilterLabel, FilterInput } from './Filter.styled';
-const Filter = ({ changeFilter, value }) => {
+const Filter = ({ onChange, value }) => {
   return (
     <FilterWrap>
       <FilterLabel htmlFor="name">Find contact by number</FilterLabel>
       <FilterInput
-        onChange={changeFilter}
+        onChange={onChange}
         name="filter"
         type="filter"
         value={value}
