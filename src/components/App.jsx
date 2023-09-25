@@ -19,6 +19,12 @@ export default class App extends Component {
   addContact = contacts => {
     // console.log(contacts);
     const { name, number } = contacts;
+    for (const contact of this.state.contacts) {
+      if (contact.name.toLowerCase() === name.toLowerCase()) {
+        alert(`${name} is already in contacts`);
+        return;
+      }
+    }
     const contact = { id: nanoid(), name, number };
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
