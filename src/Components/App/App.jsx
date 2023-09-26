@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid';
-import { Container } from 'Components/App.styled';
+import { Container } from 'Components/App/App.styled';
 import React, { Component } from 'react';
-import PhonebookForm from './PhonebookForm/PhonebookForm';
-import ContactList from './ContactList/ContactList.jsx';
-import Filter from './Filter/Filter';
+import PhonebookForm from '../PhonebookForm/PhonebookForm';
+import ContactList from '../ContactList/ContactList.jsx';
+import Filter from '../Filter/Filter';
 
 export default class App extends Component {
   state = {
