@@ -8,13 +8,17 @@ export const FilterLabel = styled.label`
 export const FilterInput = styled.input`
   display: block;
   padding-left: 10px;
-  width: 100%;
   height: 30px;
-  border-radius: 4px;
   font-size: 15px;
   font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid grey;
   &:hover,
   &:focus {
-    border-color: green;
+    border-color: #d8bfd8;
   }
 `;
