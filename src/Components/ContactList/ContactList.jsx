@@ -4,8 +4,14 @@ const ContactList = ({ contacts }) => {
   return (
     <ContactWrap>
       <ContactUl>
-        {contacts.map(({ id, name, number }) => (
-          <ContactListItem key={id} name={name} number={number} id={id} />
+        {contacts.map(({ id, name, number, onDelete }) => (
+          <ContactListItem
+            key={id}
+            name={name}
+            number={number}
+            id={id}
+            onDelete={onDelete}
+          />
         ))}
       </ContactUl>
     </ContactWrap>
